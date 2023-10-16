@@ -26,6 +26,21 @@ MainWindow::~MainWindow()
 
 void MainWindow::initLoadDump()
 {
+    // выберите путь к txt файлу
+    connect(ui->btnLoadTxtPath,&QPushButton::clicked,this,[this](){
+        const QString txtpath = QFileDialog::getOpenFileName(this,"File Path");
+        if(txtpath.isEmpty()) return;
+        ui->editLoadTxtPath->setText(txtpath);
+    });
+    // импортировать файл txt
+    connect(ui->btnLoadTxt,&QPushButton::clicked,this,[this](){
+        const QString txtpath = ui->editLoadTxtPath->text();
+        if(txtpath.isEmpty()) return;
+        //parseJson.loadJson(txtpath);
+        jsonModel->loadTxt(txtpath);
+        ui->treeView->expandAll();
+    });
+
     // выберите путь к файлу для импорта
     connect(ui->btnLoadPath,&QPushButton::clicked,this,[this](){
         const QString jsonpath = QFileDialog::getOpenFileName(this,"File Path");
@@ -130,4 +145,3 @@ void MainWindow::updateIndex()
             qDebug()<<tr("Position: (%1,%2) in top level").arg(row).arg(column);
     }
 }
-

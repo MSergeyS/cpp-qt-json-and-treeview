@@ -35,7 +35,7 @@ bool JsonTreeModel::loadJson(const QString &filepath)
     if(json_doc.isNull()||json_doc.isEmpty()||json_error.error!=QJsonParseError::NoError)
         return false;
 
-    emit beginResetModel();
+    beginResetModel();
     theRootItem->deleteAllChild(); // Очистить предыдущую модель
 
     // Определите, является ли это объектом {} или массивом [] Json.
@@ -46,9 +46,15 @@ bool JsonTreeModel::loadJson(const QString &filepath)
         // Разобрать массив в документе
         parseArray("[Root]",json_doc.array(),theRootItem);
     }
-    emit endResetModel();
+    endResetModel();
 
     qDebug()<<"load json file";
+    return true;
+}
+
+bool JsonTreeModel::loadTxt(const QString &filepath)
+{
+    qDebug()<<filepath;
     return true;
 }
 
@@ -197,7 +203,7 @@ JsonTreeItem *JsonTreeModel::getItem(const QModelIndex &index) const
 void JsonTreeModel::parseObject(const QString &key, const QJsonObject &obj, JsonTreeItem *&item)
 {
     // Узел создания объекта
-    JsonTreeItem *child=new JsonTreeItem({{0,key},{1,"[Object]"}},JsonTreeItem::Object,item);
+    JsonTreeItem *child=new JsonTreeItem({{0,key},{1,""}},JsonTreeItem::Object,item);
     item->appendChild(child);
 
     // Пройдите ключи объекта
@@ -211,7 +217,7 @@ void JsonTreeModel::parseObject(const QString &key, const QJsonObject &obj, Json
 void JsonTreeModel::parseArray(const QString &key, const QJsonArray &arr, JsonTreeItem *&item)
 {
     // Узел создания массива
-    JsonTreeItem *child=new JsonTreeItem({{0,key},{1,"[Array]"}},JsonTreeItem::Array,item);
+    JsonTreeItem *child=new JsonTreeItem({{0,key},{1,""}},JsonTreeItem::Array,item);
     item->appendChild(child);
 
     // Траверс массива
@@ -309,3 +315,7 @@ QVariant JsonTreeModel::dumpValue(JsonTreeItem *&item) const
     return item->value();
 }
 
+void JsonTreeModel::parseTxt(const QString &txt, JsonTreeItem *&item)
+{
+
+}

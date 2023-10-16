@@ -16,6 +16,31 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <layout class="QHBoxLayout" name="loadLayout_txt">
+      <item>
+       <widget class="QPushButton" name="btnLoadTxtPath">
+        <property name="text">
+         <string>loadpath</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="editLoadTxtPath">
+        <property name="text">
+         <string>://dvl_ep.txt</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnLoadTxt">
+        <property name="text">
+         <string>load</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="loadLayout">
       <item>
        <widget class="QPushButton" name="btnLoadPath">
@@ -114,7 +139,7 @@
      <x>0</x>
      <y>0</y>
      <width>630</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

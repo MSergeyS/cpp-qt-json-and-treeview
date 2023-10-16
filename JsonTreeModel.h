@@ -20,6 +20,7 @@ public:
     ~JsonTreeModel();
 
     // Импорт и экспорт данных
+    bool loadTxt(const QString &filepath);
     bool loadJson(const QString &filepath);
     bool dumpJson(const QString &filepath);
     
@@ -47,14 +48,17 @@ public:
     
 private:
     JsonTreeItem *getItem(const QModelIndex &index) const;
-    // Разобрать и сгенерировать дерево
+    // Разбираем json-файл и генерируем дерево
     void parseObject(const QString &key,const QJsonObject& obj,JsonTreeItem *&item);
     void parseArray(const QString &key,const QJsonArray& arr,JsonTreeItem *&item);
     void parseValue(const QString &key,const QJsonValue& val,JsonTreeItem *&item);
-    // Создать узел JSON
+    // Создаем узел JSON
     QVariantMap dumpObject(JsonTreeItem *&item) const;
     QVariantList dumpArray(JsonTreeItem *&item) const;
     QVariant dumpValue(JsonTreeItem *&item) const;
+
+    // Разбираем txt-файл и генерируем дерево
+    void parseTxt(const QString &txt, JsonTreeItem *&item);
     
 private:
     JsonTreeItem *theRootItem;
