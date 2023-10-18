@@ -56,9 +56,6 @@ private:
     QVariantMap dumpObject(JsonTreeItem *&item) const;
     QVariantList dumpArray(JsonTreeItem *&item) const;
     QVariant dumpValue(JsonTreeItem *&item) const;
-
-    // Разбираем txt-файл и генерируем дерево
-    void parseTxt(const QString &txt, JsonTreeItem *&item);
     
 private:
     JsonTreeItem *theRootItem;

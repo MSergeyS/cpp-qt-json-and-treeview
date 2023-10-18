@@ -5,6 +5,7 @@
 
 //#include "ParseJson.h"
 #include "JsonTreeModel.h"
+#include "TxtTreeModel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,5 +28,6 @@ private:
     Ui::MainWindow *ui;
     //ParseJson parseJson;
     JsonTreeModel *jsonModel;
+    TreeModel *model;
 };
 #endif // MAINWINDOW_H

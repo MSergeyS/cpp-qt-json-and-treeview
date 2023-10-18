@@ -17,6 +17,8 @@ SOURCES += \
     JsonTreeItem.cpp \
     JsonTreeModel.cpp \
     ParseJson.cpp \
+    TxtTreeItem.cpp \
+    TxtTreeModel.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -24,6 +26,8 @@ HEADERS += \
     JsonTreeItem.h \
     JsonTreeModel.h \
     ParseJson.h \
+    TxtTreeItem.h \
+    TxtTreeModel.h \
     mainwindow.h
 
 FORMS += \

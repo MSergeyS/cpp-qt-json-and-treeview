@@ -1,4 +1,5 @@
 #include "JsonTreeModel.h"
+#include "TxtTreeModel.h"
 
 #include <QFile>
 #include <QDebug>
@@ -14,6 +15,34 @@ JsonTreeModel::~JsonTreeModel()
     delete theRootItem;
 }
 
+bool JsonTreeModel::loadTxt(const QString &filepath)
+{
+    // Определить путь и нормально ли он открывается
+    if(filepath.isEmpty())
+        return false;
+    QFile file(filepath);
+    if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
+        return false;
+
+    // Закрыть файл после чтения данных
+    const QByteArray raw_data=file.readAll();
+    file.close();
+
+    beginResetModel();
+    theRootItem->deleteAllChild(); // Очистить предыдущую модель
+
+    // Создаем заголовки столбцов:
+    QStringList headers;
+    headers << tr("Заголовок") << tr("Описание");
+    // Загружаем данные в модель:
+    TreeModel *model = new TreeModel(headers, raw_data);
+
+    endResetModel();
+
+    qDebug()<<"load txt file";
+    return true;
+}
+
 bool JsonTreeModel::loadJson(const QString &filepath)
 {
     // Определить путь и нормально ли он открывается
@@ -27,7 +56,7 @@ bool JsonTreeModel::loadJson(const QString &filepath)
     const QByteArray raw_data=file.readAll();
     file.close();
 
-    // Разобрать документ в формате Jso
+    // Разобрать документ в формате Json
     QJsonParseError json_error;
     QJsonDocument json_doc=QJsonDocument::fromJson(raw_data,&json_error);
 
@@ -49,12 +78,6 @@ bool JsonTreeModel::loadJson(const QString &filepath)
     endResetModel();
 
     qDebug()<<"load json file";
-    return true;
-}
-
-bool JsonTreeModel::loadTxt(const QString &filepath)
-{
-    qDebug()<<filepath;
     return true;
 }
 
@@ -313,9 +336,4 @@ QVariant JsonTreeModel::dumpValue(JsonTreeItem *&item) const
 {
     // QVariant соответствует QJsonValue
     return item->value();
-}
-
-void JsonTreeModel::parseTxt(const QString &txt, JsonTreeItem *&item)
-{
-
 }

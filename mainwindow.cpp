@@ -28,17 +28,39 @@ void MainWindow::initLoadDump()
 {
     // выберите путь к txt файлу
     connect(ui->btnLoadTxtPath,&QPushButton::clicked,this,[this](){
-        const QString txtpath = QFileDialog::getOpenFileName(this,"File Path");
-        if(txtpath.isEmpty()) return;
-        ui->editLoadTxtPath->setText(txtpath);
+        const QString filepath = QFileDialog::getOpenFileName(this,"File Path");
+        if(filepath.isEmpty()) return;
+        ui->editLoadTxtPath->setText(filepath);
     });
     // импортировать файл txt
     connect(ui->btnLoadTxt,&QPushButton::clicked,this,[this](){
-        const QString txtpath = ui->editLoadTxtPath->text();
-        if(txtpath.isEmpty()) return;
-        //parseJson.loadJson(txtpath);
-        jsonModel->loadTxt(txtpath);
+        const QString filepath = ui->editLoadTxtPath->text();
+
+        // Определить путь и нормально ли он открывается
+        if(filepath.isEmpty())
+            return false;
+
+        jsonModel->loadTxt(filepath);
         ui->treeView->expandAll();
+
+        /*
+        QFile file(filepath);
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            qDebug() << "Файл не открылся!!!";
+        }
+
+        // Закрыть файл после чтения данных
+        const QByteArray raw_data=file.readAll();
+        file.close();
+
+        // Создаем заголовки столбцов:
+        QStringList headers;
+        headers << tr("Заголовок") << tr("Описание");
+        // Загружаем данные в модель:
+        TreeModel *model = new TreeModel(headers, raw_data);
+        //ui->treeView->expandAll();
+        ui->treeView->setModel(model);
+        */
     });
 
     // выберите путь к файлу для импорта
