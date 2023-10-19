@@ -18,7 +18,7 @@ else()
 endif()
 
 # укажем путь, где установлен Qt
-SET(QT_ROOT_DIR "C:/Qt/6.6.0/msvc2019_64")
+#SET(QT_ROOT_DIR "C:/Qt/6.6.0/msvc2019_64")
 
 ## укажем, что мы хотим найти пакет Qt6 или Qt5
 find_package(QT NAMES Qt6 Qt5
@@ -44,7 +44,7 @@ file(GLOB sources
     ./*.txt
 )
 
-#set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
