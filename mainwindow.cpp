@@ -34,33 +34,10 @@ void MainWindow::initLoadDump()
     });
     // импортировать файл txt
     connect(ui->btnLoadTxt,&QPushButton::clicked,this,[this](){
-        const QString filepath = ui->editLoadTxtPath->text();
-
-        // Определить путь и нормально ли он открывается
-        if(filepath.isEmpty())
-            return false;
-
-        jsonModel->loadTxt(filepath);
+        const QString loadpath = ui->editLoadTxtPath->text();
+        if(loadpath.isEmpty()) return;
+        jsonModel->loadTxt(loadpath);
         ui->treeView->expandAll();
-
-        /*
-        QFile file(filepath);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            qDebug() << "Файл не открылся!!!";
-        }
-
-        // Закрыть файл после чтения данных
-        const QByteArray raw_data=file.readAll();
-        file.close();
-
-        // Создаем заголовки столбцов:
-        QStringList headers;
-        headers << tr("Заголовок") << tr("Описание");
-        // Загружаем данные в модель:
-        TreeModel *model = new TreeModel(headers, raw_data);
-        //ui->treeView->expandAll();
-        ui->treeView->setModel(model);
-        */
     });
 
     // выберите путь к файлу для импорта

@@ -25,17 +25,22 @@ bool JsonTreeModel::loadTxt(const QString &filepath)
         return false;
 
     // Закрыть файл после чтения данных
-    const QByteArray raw_data=file.readAll();
+    const QByteArray raw_data = file.readAll();
     file.close();
 
     beginResetModel();
     theRootItem->deleteAllChild(); // Очистить предыдущую модель
 
+    // Разобрать объект в документе
+    parseTxt(raw_data, theRootItem);
+    
+    /*
     // Создаем заголовки столбцов:
     QStringList headers;
     headers << tr("Заголовок") << tr("Описание");
     // Загружаем данные в модель:
     TreeModel *model = new TreeModel(headers, raw_data);
+    */
 
     endResetModel();
 
@@ -246,6 +251,78 @@ void JsonTreeModel::parseArray(const QString &key, const QJsonArray &arr, JsonTr
     // Траверс массива
     for(int i=0;i<arr.count();i++){
         parseValue("-",arr.at(i),child);
+    }
+}
+
+void JsonTreeModel::parseTxt(const QString& text, JsonTreeItem* parent)
+{
+    const QStringList lines = text.split(QString("\n"));
+
+    QList<JsonTreeItem*> parents;
+    parents << parent;
+
+    for (int number = 0; number < lines.count(); number++) {
+        QString line(lines.at(number)); // очередная строка
+        // line = "EP/MODE3/WORK/BOT_ITERATION             : 7"
+
+        if (!line.isEmpty()) {
+            // разбиваем строку на путь и значение (разделитель ':')
+            QStringList columnStrings = line.split(":", Qt::SkipEmptyParts);
+            // columnStrings = {"EP/MODE3/WORK/BOT_ITERATION             ", " 7"}
+
+            // путь для дерева
+            QStringList linePathParts = columnStrings.at(0).split('/');
+            int position = linePathParts.size();
+            // linePathParts = {"EP", "MODE3", "WORK", "BOT_ITERATION             "}
+            // position = 4
+
+            columnStrings.pop_front();
+            columnStrings.push_front(linePathParts.last().trimmed());
+            // columnStrings = {"BOT_ITERATION", " 7"}
+
+            QList<QVariant> columnData;
+            columnData.reserve(columnStrings.count());
+            for (const QString& columnString : columnStrings)
+                columnData << columnString;
+            // columnData = {"BOT_ITERATION", " 7"}
+     
+            int row_item = 0;
+            for (int level = 0; level < position - 1; level++) {
+                bool is_has = false; // флаг есть параметр или ещё нет
+                row_item = 1;
+                QString name_parameter = linePathParts.at(level).trimmed();
+                // name_parameter = "EP"
+                // по всем детям
+                for (int row = 0; row < parents.last()->childCount(); row++) {
+                    JsonTreeItem* tree_item = parents.last()->childItem(row);
+                    row_item = row;
+                    // поиск имени равному текущему имени пути параметра
+                    if ((tree_item->data(0)).toString() == name_parameter) {
+                        is_has = true; // нашли
+                        break;         // выходим из поиска
+                    }
+                }
+
+                if (!is_has) { // если нет такого параметра добовляем в лист зависимостей (в дети)
+                    QList<QVariant> data = { name_parameter, "" }; // значение пустая строка ""
+                    parents.last()->appendChild(new JsonTreeItem({ {0,data.at(0)}, {1,data.at(1)} },
+                                                                 JsonTreeItem::Object, parents.last()));
+                    row_item = parents.last()->childCount() - 1;
+                }
+                // смещаем уровень вложения на шаг выше
+                if (parents.last()->childCount() >= 0) {
+                    parents << parents.last()->childItem(row_item);
+                }
+            }
+            // добовляем параметр в лист зависимостей (в дети)
+            parents.last()->appendChild(new JsonTreeItem({ {0,columnData.at(0)}, {1,columnData.at(1)} },
+                                                         JsonTreeItem::Object, parents.last()));;
+
+            // смещаем уровень вложения вниз до корня
+            while (parents.count() > 1) {
+                parents.pop_back();
+            }
+        }
     }
 }
 

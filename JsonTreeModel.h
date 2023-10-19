@@ -52,6 +52,7 @@ private:
     void parseObject(const QString &key,const QJsonObject& obj,JsonTreeItem *&item);
     void parseArray(const QString &key,const QJsonArray& arr,JsonTreeItem *&item);
     void parseValue(const QString &key,const QJsonValue& val,JsonTreeItem *&item);
+    void parseTxt(const QString& data, JsonTreeItem* item);
     // Создаем узел JSON
     QVariantMap dumpObject(JsonTreeItem *&item) const;
     QVariantList dumpArray(JsonTreeItem *&item) const;
