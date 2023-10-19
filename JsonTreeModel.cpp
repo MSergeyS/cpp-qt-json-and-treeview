@@ -245,73 +245,6 @@ void JsonTreeModel::parseArray(const QString &key, const QJsonArray &arr, JsonTr
     }
 }
 
-void JsonTreeModel::parseTxt(const QString& text, JsonTreeItem* parent)
-{
-    const QStringList lines = text.split(QString("\n"));
-
-    QList<JsonTreeItem*> parents;
-    parents << parent;
-
-    for (int number = 0; number < lines.count(); number++) {
-        QString line(lines.at(number)); // очередная строка
-        // line = "EP/MODE3/WORK/BOT_ITERATION             : 7"
-
-        if (!line.isEmpty()) {
-            // разбиваем строку на путь и значение (разделитель ':')
-            QStringList columnStrings = line.split(":", Qt::SkipEmptyParts);
-            // columnStrings = {"EP/MODE3/WORK/BOT_ITERATION             ", " 7"}
-
-            // путь для дерева
-            QStringList linePathParts = columnStrings.at(0).split('/');
-            int position = linePathParts.size();
-            // linePathParts = {"EP", "MODE3", "WORK", "BOT_ITERATION             "}
-            // position = 4
-
-            columnStrings.pop_front();
-            columnStrings.push_front(linePathParts.last().trimmed());
-            // columnStrings = {"BOT_ITERATION", " 7"}
-
-            const QJsonValue& Value = columnStrings.at(1).trimmed();
-
-            int row_item = 0;
-            QString key;
-            for (int level = 0; level < position - 1; level++) {
-                bool is_has = false; // флаг есть параметр или ещё нет
-                row_item = 1;
-                key = linePathParts.at(level).trimmed();
-                // name_parameter = "EP"
-                // по всем детям
-                for (int row = 0; row < parents.last()->childCount(); row++) {
-                    JsonTreeItem* tree_item = parents.last()->childItem(row);
-                    row_item = row;
-                    // поиск имени равному текущему имени пути параметра
-                    if ((tree_item->data(0)).toString() == key) {
-                        is_has = true; // нашли
-                        break;         // выходим из поиска
-                    }
-                }
-
-                if (!is_has) { // если нет такого параметра добовляем в лист зависимостей (в дети)
-                    const QJsonValue& val = "";
-                    parseValue(key, val, parents.last());
-                    row_item = parents.last()->childCount() - 1;
-                }
-                // смещаем уровень вложения на шаг выше
-                if (parents.last()->childCount() >= 0) {
-                    parents << parents.last()->childItem(row_item);
-                }
-            }
-            // добовляем параметр в лист зависимостей (в дети)
-            key = linePathParts.at(position - 1).trimmed();
-            parseValue(key, Value, parents.last());
-            // смещаем уровень вложения вниз до корня
-            while (parents.count() > 1) {
-                parents.pop_back();
-            }
-        }
-    }
-}
-
 void JsonTreeModel::parseValue(const QString &key, const QJsonValue &val, JsonTreeItem *&item)
 {
     QVariant the_val;
@@ -344,6 +277,84 @@ void JsonTreeModel::parseValue(const QString &key, const QJsonValue &val, JsonTr
     // Создать дочерний узел
     JsonTreeItem *child=new JsonTreeItem({{0,key},{1,the_val}},JsonTreeItem::Value,item);
     item->appendChild(child);
+}
+
+void JsonTreeModel::parseTxt(const QString& text, JsonTreeItem* &parent)
+{
+    QList<JsonTreeItem*> parents;
+
+    // Узел создания объекта
+    JsonTreeItem *child=new JsonTreeItem({{0,"[Root]"},{1,""}},JsonTreeItem::Object,parent);
+    parent->appendChild(child);
+
+    const QStringList lines = text.split(QString("\n"));
+
+    parents << parent->childItem(0);
+
+    for (int number = 0; number < lines.count(); number++) {
+        QString line(lines.at(number)); // очередная строка
+        // line = "EP/MODE3/WORK/BOT_ITERATION             : 7"
+
+        if (!line.isEmpty()) {
+            // разбиваем строку на путь и значение (разделитель ':')
+            QStringList columnStrings = line.split(":", Qt::SkipEmptyParts);
+            // columnStrings = {"EP/MODE3/WORK/BOT_ITERATION             ", " 7"}
+
+            // путь для дерева
+            QStringList linePathParts = columnStrings.at(0).split('/');
+            int position = linePathParts.size();
+            // linePathParts = {"EP", "MODE3", "WORK", "BOT_ITERATION             "}
+            // position = 4
+
+            columnStrings.pop_front();
+            columnStrings.push_front(linePathParts.last().trimmed());
+            // columnStrings = {"BOT_ITERATION", " 7"}
+
+            QJsonValue value = columnStrings.at(1).trimmed();
+
+            int row_item = 0;
+            QString key;
+            for (int level = 0; level < position - 1; level++) {
+                bool is_has = false; // флаг есть параметр или ещё нет
+                row_item = 1;
+                key = linePathParts.at(level).trimmed();
+                // name_parameter = "EP"
+                // по всем детям
+                for (int row = 0; row < parents.last()->childCount(); row++) {
+                    JsonTreeItem* tree_item = parents.last()->childItem(row);
+                    row_item = row;
+                    // поиск имени равному текущему имени пути параметра
+                    if ((tree_item->data(0)).toString() == key) {
+                        is_has = true; // нашли
+                        break;         // выходим из поиска
+                    }
+                }
+
+                if (!is_has) { // если нет такого параметра добовляем в лист зависимостей (в дети)
+                    //const QJsonValue& val = "";
+                    QJsonObject jsonObj;
+                    jsonObj.insert(key, "");
+                    parseObject(key, jsonObj, parents.last());
+                    //parseValue(key, "", parents.last());
+                    row_item = parents.last()->childCount() - 1;
+                }
+                // смещаем уровень вложения на шаг выше
+                if (parents.last()->childCount() >= 0) {
+                    parents << parents.last()->childItem(row_item);
+                }
+            }
+            // добовляем параметр в лист зависимостей (в дети)
+            key = linePathParts.at(position - 1).trimmed();
+            QJsonObject jsonObj;
+            jsonObj.insert(key, value);
+            parseObject(key, jsonObj, parents.last());
+            //parseValue(key, value, parents.last());
+            // смещаем уровень вложения вниз до корня
+            while (parents.count() > 1) {
+                parents.pop_back();
+            }
+        }
+    }
 }
 
 QVariantMap JsonTreeModel::dumpObject(JsonTreeItem *&item) const
