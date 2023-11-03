@@ -52,7 +52,7 @@
       <item>
        <widget class="QLineEdit" name="editLoadPath">
         <property name="text">
-         <string>://default_data.json</string>
+         <string>://dvl_params_list.txt</string>
         </property>
        </widget>
       </item>
@@ -114,6 +114,20 @@
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="insertColumnAction">
+        <property name="text">
+         <string>+ стобец</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="removeColumnAction">
+        <property name="text">
+         <string>- стобец</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -133,6 +147,9 @@
       <property name="animated">
        <bool>true</bool>
       </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
      </widget>
     </item>
    </layout>

@@ -1,1175 +1,3295 @@
 {
-    "EP": {
-        "AJST": {
-            "AJST": "",
-            "DMAX": {
-                "DMAX": "1000"
-            },
-            "TET_ANGLE": {
-                "TET_ANGLE": "-60.000000"
-            }
-        },
-        "ANTEN_NUM": {
-            "ANTEN_NUM": "0"
-        },
-        "ART": {
-            "ART": "",
-            "F0": {
-                "F0": "568181.812500"
-            },
-            "FWB": {
-                "FWB": "7900.000000"
-            },
-            "N0": {
-                "N0": "220"
-            }
-        },
-        "CONROLLER_NUM": {
-            "CONROLLER_NUM": "19009"
-        },
-        "COORDN": {
-            "ALFA_AB": {
-                "ALFA_AB": "-45.000000"
-            },
-            "ALFA_CD": {
-                "ALFA_CD": "45.000000"
-            },
-            "CHAN_A": {
-                "CHAN_A": "4"
-            },
-            "CHAN_B": {
-                "CHAN_B": "2"
-            },
-            "CHAN_C": {
-                "CHAN_C": "3"
-            },
-            "CHAN_D": {
-                "CHAN_D": "1"
-            },
-            "COORDN": ""
-        },
-        "DECIMAL_NUM": {
-            "DECIMAL_NUM": "\u0018\u0012.\".416219016"
-        },
-        "DEPTH_MAX": {
-            "DEPTH_MAX": "0"
-        },
-        "DEV_MODEL": {
-            "DEV_MODEL": "H5s7D"
-        },
-        "EP": "",
-        "ETH": {
-            "DEVICE_IP": {
-                "DEVICE_IP": "51226816"
-            },
-            "DEVICE_TXT_UDP": {
-                "DEVICE_TXT_UDP": "5555"
-            },
-            "ETH": "",
-            "FACTORY_IP": {
-                "FACTORY_IP": "4262308032"
-            },
-            "SUPPORT": {
-                "SUPPORT": "1"
-            },
-            "USE": {
-                "USE": "1"
-            }
-        },
-        "FILTER": {
-            "FILTER": "",
-            "V_KALMN_Q": {
-                "V_KALMN_Q": "0.200000"
-            },
-            "V_KALMN_R": {
-                "V_KALMN_R": "0.200000"
-            }
-        },
-        "MODE1": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "6"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "55"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "48"
-            },
-            "BD_MAX": {
-                "BD_MAX": "910"
-            },
-            "BD_TRES": {
-                "BD_TRES": "13762"
-            },
-            "BD_WORK": {
-                "BD_WORK": "922"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "25.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "15.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "1136"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE1": "",
-            "MODE_ID": {
-                "MODE_ID": "0"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode3-Abs_3"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "922"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "24"
-            },
-            "T_ADJ": {
-                "T_ADJ": "20"
-            },
-            "T_DZ": {
-                "T_DZ": "190"
-            },
-            "T_WT": {
-                "T_WT": "190"
-            },
-            "T_ZI": {
-                "T_ZI": "95"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "9.470000"
-                },
-                "H_MAX": {
-                    "H_MAX": "10.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "2.700000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE2": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "8"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "197"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "171"
-            },
-            "BD_MAX": {
-                "BD_MAX": "1908"
-            },
-            "BD_TRES": {
-                "BD_TRES": "34406"
-            },
-            "BD_WORK": {
-                "BD_WORK": "1932"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "25.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "15.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "2841"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE2": "",
-            "MODE_ID": {
-                "MODE_ID": "1"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "1932"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "60"
-            },
-            "T_ADJ": {
-                "T_ADJ": "20"
-            },
-            "T_DZ": {
-                "T_DZ": "474"
-            },
-            "T_WT": {
-                "T_WT": "474"
-            },
-            "T_ZI": {
-                "T_ZI": "237"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "20.440001"
-                },
-                "H_MAX": {
-                    "H_MAX": "20.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "6.600000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE3": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "10"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "528"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "459"
-            },
-            "BD_MAX": {
-                "BD_MAX": "4360"
-            },
-            "BD_TRES": {
-                "BD_TRES": "58163"
-            },
-            "BD_WORK": {
-                "BD_WORK": "4420"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "25.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "15.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "6818"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE3": "",
-            "MODE_ID": {
-                "MODE_ID": "2"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "4420"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "142"
-            },
-            "T_ADJ": {
-                "T_ADJ": "20"
-            },
-            "T_DZ": {
-                "T_DZ": "1136"
-            },
-            "T_WT": {
-                "T_WT": "1136"
-            },
-            "T_ZI": {
-                "T_ZI": "568"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "48.500000"
-                },
-                "H_MAX": {
-                    "H_MAX": "45.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "15.600000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE4": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "11"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "1380"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "1200"
-            },
-            "BD_MAX": {
-                "BD_MAX": "10355"
-            },
-            "BD_TRES": {
-                "BD_TRES": "203571"
-            },
-            "BD_WORK": {
-                "BD_WORK": "10499"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "25.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "15.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "17045"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE4": "",
-            "MODE_ID": {
-                "MODE_ID": "3"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode4-Abs_4"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "10499"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "355"
-            },
-            "T_ADJ": {
-                "T_ADJ": "20"
-            },
-            "T_DZ": {
-                "T_DZ": "2840"
-            },
-            "T_WT": {
-                "T_WT": "2840"
-            },
-            "T_ZI": {
-                "T_ZI": "1420"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "121.239998"
-                },
-                "H_MAX": {
-                    "H_MAX": "105.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "39.000000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE5": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "11"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "1854"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "1612"
-            },
-            "BD_MAX": {
-                "BD_MAX": "11254"
-            },
-            "BD_TRES": {
-                "BD_TRES": "3883008"
-            },
-            "BD_WORK": {
-                "BD_WORK": "11446"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "35.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "0.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "0.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "22727"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE5": "",
-            "MODE_ID": {
-                "MODE_ID": "4"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode5-Relative"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "11446"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "474"
-            },
-            "T_ADJ": {
-                "T_ADJ": "20"
-            },
-            "T_DZ": {
-                "T_DZ": "2083"
-            },
-            "T_WT": {
-                "T_WT": "2083"
-            },
-            "T_ZI": {
-                "T_ZI": "1894"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "5"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "10"
-                },
-                "BW": {
-                    "BW": "0"
-                },
-                "D_TRES": {
-                    "D_TRES": "121.239998"
-                },
-                "H_MAX": {
-                    "H_MAX": "105.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "28.600000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE6": {
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "5"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "24"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "21"
-            },
-            "BD_MAX": {
-                "BD_MAX": "7490"
-            },
-            "BD_TRES": {
-                "BD_TRES": "4014"
-            },
-            "BD_WORK": {
-                "BD_WORK": "7494"
-            },
-            "CHPK": {
-                "CHPK": "0"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "25.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "15.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "341"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE6": "",
-            "MODE_ID": {
-                "MODE_ID": "5"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode6-BotSeach"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "7494"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "7"
-            },
-            "T_ADJ": {
-                "T_ADJ": "2"
-            },
-            "T_DZ": {
-                "T_DZ": "36"
-            },
-            "T_WT": {
-                "T_WT": "56"
-            },
-            "T_ZI": {
-                "T_ZI": "28"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "10"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "117.779999"
-                },
-                "H_MAX": {
-                    "H_MAX": "102.000000"
-                },
-                "H_MIN": {
-                    "H_MIN": "0.800000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE7": {
-            "AKF_CHPK_M": {
-                "AKF_CHPK_M": "25"
-            },
-            "AKF_CHPK_M2": {
-                "AKF_CHPK_M2": "65"
-            },
-            "AKF_CHPK_N1": {
-                "AKF_CHPK_N1": "10"
-            },
-            "AKF_CHPK_N2": {
-                "AKF_CHPK_N2": "20"
-            },
-            "AKF_CHPK_N3": {
-                "AKF_CHPK_N3": "30"
-            },
-            "AKF_CHPK_N4": {
-                "AKF_CHPK_N4": "40"
-            },
-            "AKF_CHPK_N5": {
-                "AKF_CHPK_N5": "160"
-            },
-            "AKF_CHPK_N6": {
-                "AKF_CHPK_N6": "240"
-            },
-            "AKF_CHPK_N7": {
-                "AKF_CHPK_N7": "360"
-            },
-            "AKF_CHPK_N8": {
-                "AKF_CHPK_N8": "400"
-            },
-            "AKF_CHPK_T1": {
-                "AKF_CHPK_T1": "239"
-            },
-            "AKF_CHPK_T2": {
-                "AKF_CHPK_T2": "119"
-            },
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "9"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "425"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "400"
-            },
-            "BD_MAX": {
-                "BD_MAX": "261"
-            },
-            "BD_TRES": {
-                "BD_TRES": "4014"
-            },
-            "BD_WORK": {
-                "BD_WORK": "265"
-            },
-            "CHPK": {
-                "CHPK": "1"
-            },
-            "CHPK_HYP_RELIAB": {
-                "CHPK_HYP_RELIAB": "0.050000"
-            },
-            "CHPK_MAX_FREQ": {
-                "CHPK_MAX_FREQ": "800"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "0.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "0.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "303"
-            },
-            "GZI_P2": {
-                "GZI_P2": "783"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE7": "",
-            "MODE_ID": {
-                "MODE_ID": "6"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode7-Chpk_0"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "685"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "7"
-            },
-            "T_ADJ": {
-                "T_ADJ": "2"
-            },
-            "T_DZ": {
-                "T_DZ": "30"
-            },
-            "T_WT": {
-                "T_WT": "30"
-            },
-            "T_ZI": {
-                "T_ZI": "25"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "2.420000"
-                },
-                "H_MAX": {
-                    "H_MAX": "3.200000"
-                },
-                "H_MIN": {
-                    "H_MIN": "0.500000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "MODE8": {
-            "AKF_CHPK_M": {
-                "AKF_CHPK_M": "76"
-            },
-            "AKF_CHPK_N1_7": {
-                "AKF_CHPK_N1_7": "36"
-            },
-            "AKF_CHPK_N2_7": {
-                "AKF_CHPK_N2_7": "360"
-            },
-            "AKF_CHPK_N3_7": {
-                "AKF_CHPK_N3_7": "44"
-            },
-            "AKF_CHPK_N4_7": {
-                "AKF_CHPK_N4_7": "396"
-            },
-            "AKF_CHPK_N5_7": {
-                "AKF_CHPK_N5_7": "404"
-            },
-            "AKF_CHPK_N6_7": {
-                "AKF_CHPK_N6_7": "440"
-            },
-            "AKF_CHPK_N7": {
-                "AKF_CHPK_N7": "0"
-            },
-            "AKF_CHPK_N8": {
-                "AKF_CHPK_N8": "0"
-            },
-            "AKF_CHPK_T1": {
-                "AKF_CHPK_T1": "396"
-            },
-            "AKF_CHPK_T2": {
-                "AKF_CHPK_T2": "0"
-            },
-            "AKF_CHPK_T3": {
-                "AKF_CHPK_T3": "0"
-            },
-            "AKF_SHIFT": {
-                "AKF_SHIFT": "10"
-            },
-            "AKF_SIZE": {
-                "AKF_SIZE": "516"
-            },
-            "AKF_TDELAY": {
-                "AKF_TDELAY": "440"
-            },
-            "BD_MAX": {
-                "BD_MAX": "464"
-            },
-            "BD_TRES": {
-                "BD_TRES": "10895"
-            },
-            "BD_WORK": {
-                "BD_WORK": "472"
-            },
-            "CHPK": {
-                "CHPK": "1"
-            },
-            "CHPK_HYP_RELIAB": {
-                "CHPK_HYP_RELIAB": "0.050000"
-            },
-            "CHPK_MAX_FREQ": {
-                "CHPK_MAX_FREQ": "1500"
-            },
-            "CODE_ZI": {
-                "CODE_ZI": "0"
-            },
-            "DEPTH_FILTER_SIZE": {
-                "DEPTH_FILTER_SIZE": "5"
-            },
-            "FREQ_FILTER_SIZE": {
-                "FREQ_FILTER_SIZE": "5"
-            },
-            "GAIN_0": {
-                "GAIN_0": "0.000000"
-            },
-            "GAIN_1": {
-                "GAIN_1": "0.000000"
-            },
-            "GAIN_2": {
-                "GAIN_2": "0.000000"
-            },
-            "GZI_M": {
-                "GZI_M": "76960"
-            },
-            "GZI_MODE": {
-                "GZI_MODE": "0"
-            },
-            "GZI_N": {
-                "GZI_N": "0"
-            },
-            "GZI_P": {
-                "GZI_P": "907"
-            },
-            "GZI_Z": {
-                "GZI_Z": "30"
-            },
-            "MODE8": "",
-            "MODE_ID": {
-                "MODE_ID": "7"
-            },
-            "NAME_MODE": {
-                "NAME_MODE": "Mode8-Chpk_1"
-            },
-            "NUM_SAMPLE": {
-                "NUM_SAMPLE": "908"
-            },
-            "SIZE_BD": {
-                "SIZE_BD": "19"
-            },
-            "T_ADJ": {
-                "T_ADJ": "2"
-            },
-            "T_DZ": {
-                "T_DZ": "114"
-            },
-            "T_WT": {
-                "T_WT": "114"
-            },
-            "T_ZI": {
-                "T_ZI": "76"
-            },
-            "VERSION": {
-                "VERSION": "256"
-            },
-            "WORK": {
-                "BOT_ITERATION": {
-                    "BOT_ITERATION": "7"
-                },
-                "BOT_MEASURE_PERIOD": {
-                    "BOT_MEASURE_PERIOD": "0"
-                },
-                "BW": {
-                    "BW": "1"
-                },
-                "D_TRES": {
-                    "D_TRES": "4.040000"
-                },
-                "H_MAX": {
-                    "H_MAX": "4.300000"
-                },
-                "H_MIN": {
-                    "H_MIN": "1.600000"
-                },
-                "V_ITERATION": {
-                    "V_ITERATION": "0"
-                },
-                "WORK": ""
-            }
-        },
-        "PA": {
-            "PA": "",
-            "QMIN": {
-                "QMIN": "16"
-            },
-            "TIME_Z_MIN": {
-                "TIME_Z_MIN": "0"
-            },
-            "T_PULSE_MAX": {
-                "T_PULSE_MAX": "50"
-            }
-        },
-        "POWER": {
-            "POWER": "",
-            "VPOW_B": {
-                "VPOW_B": "0"
-            },
-            "VPOW_K": {
-                "VPOW_K": "0"
-            },
-            "VPOW_MAX": {
-                "VPOW_MAX": "30000"
-            },
-            "VPOW_MIN": {
-                "VPOW_MIN": "10000"
-            }
-        },
-        "PRODACT_DATE": {
-            "PRODACT_DATE": "4032019"
-        },
-        "RS": {
-            "RS": "",
-            "SPEED": {
-                "SPEED": "0"
-            },
-            "SUPPORT": {
-                "SUPPORT": "0"
-            },
-            "USE": {
-                "USE": "0"
-            }
-        },
-        "SENSORS": {
-            "1": {
-                "1": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+    "[Headers]": [
+        "ID",
+        "ACCESS",
+        "TYPE",
+        "CNT",
+        "MIN",
+        "MAX",
+        "STEP",
+        "DEFAULT"
+    ],
+    "[Root]": {
+        "EP": {
+            "AJST": {
+                "DMAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "1000"
+                ],
+                "TET_ANGLE": [
+                    "RW",
+                    "FLOAT",
+                    "1",
+                    "-90.00",
+                    "90.00",
+                    "0.00",
+                    "-60.00"
+                ]
+            },
+            "ANTEN_NUM": [
+                "RWA",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "0"
+            ],
+            "ART": {
+                "F0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "568181.81"
+                ],
+                "FWB": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "7900.00"
+                ],
+                "N0": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "220"
+                ]
+            },
+            "CONROLLER_NUM": [
+                "RWA",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "0"
+            ],
+            "COORDN": {
+                "ALFA_AB": [
+                    "RW",
+                    "FLOAT",
+                    "1",
+                    "-180.00",
+                    "180.00",
+                    "0.00",
+                    "-45.00"
+                ],
+                "ALFA_CD": [
+                    "RW",
+                    "FLOAT",
+                    "1",
+                    "-180.00",
+                    "180.00",
+                    "0.00",
+                    "45.00"
+                ],
+                "CHAN_A": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "1.00",
+                    "4.00",
+                    "1.00",
+                    "4"
+                ],
+                "CHAN_B": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "1.00",
+                    "4.00",
+                    "1.00",
+                    "2"
+                ],
+                "CHAN_C": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "1.00",
+                    "4.00",
+                    "1.00",
+                    "3"
+                ],
+                "CHAN_D": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "1.00",
+                    "4.00",
+                    "1.00",
+                    "1"
+                ]
+            },
+            "DECIMAL_NUM": [
+                "RWA",
+                "STRING",
+                "32",
+                "N/A",
+                "N/A",
+                "N/A",
+                "N/A"
+            ],
+            "DEPTH_MAX": [
+                "RWA",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "0"
+            ],
+            "DEV_MODEL": [
+                "RWA",
+                "STRING",
+                "32",
+                "N/A",
+                "N/A",
+                "N/A",
+                "N/A"
+            ],
+            "ETH": {
+                "DEVICE_IP": [
+                    "RW",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "51226816"
+                ],
+                "DEVICE_TXT_UDP": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "5555"
+                ],
+                "FACTORY_IP": [
+                    "R",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "SUPPORT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "1"
+                ],
+                "USE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "1"
+                ]
+            },
+            "FILTER": {
+                "V_KALMN_Q": [
+                    "RW",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "0.00",
+                    "0.20"
+                ],
+                "V_KALMN_R": [
+                    "RW",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "0.00",
+                    "0.20"
+                ]
+            },
+            "MODE1": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "6"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "55"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "48"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "910"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "13762"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "922"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "25.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "15.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "1136"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "0"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode3-Abs_3"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "922"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "24"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "20"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "190"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "190"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "95"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "9.47"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "10.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "2.70"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "2": {
-                "2": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE2": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "8"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "197"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "171"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "1908"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "34406"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "1932"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "25.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "15.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "2841"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "1"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "1932"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "60"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "20"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "474"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "474"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "237"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "20.44"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "20.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "6.60"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "3": {
-                "3": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE3": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "10"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "528"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "459"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "4360"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "58163"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "4420"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "25.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "15.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "6818"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "2"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "4420"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "142"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "20"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1136"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1136"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "568"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "48.50"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "45.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "15.60"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "4": {
-                "4": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE4": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "11"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1380"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1200"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "10355"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "203571"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "10499"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "25.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "15.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "17045"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "3"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode4-Abs_4"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "10499"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "355"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "20"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "2840"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "2840"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1420"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "121.24"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "105.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "39.00"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "5": {
-                "5": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE5": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "11"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1854"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1612"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "11254"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "3883008"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "11446"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "35.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "22727"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "4"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode5-Relative"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "11446"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "474"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "20"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "2083"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "2083"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "1894"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "5"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "10"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "121.24"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "105.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "28.60"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "6": {
-                "6": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE6": {
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "5"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "24"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "21"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "7490"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "4014"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "7494"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "25.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "15.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "341"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "5"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode6-BotSeach"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "7494"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "7"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "2"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "36"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "56"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "28"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "10"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "117.78"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "102.00"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "0.80"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "7": {
-                "7": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE7": {
+                "AKF_CHPK_M": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "25"
+                ],
+                "AKF_CHPK_M2": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "65"
+                ],
+                "AKF_CHPK_N1": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "10"
+                ],
+                "AKF_CHPK_N2": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "20"
+                ],
+                "AKF_CHPK_N3": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "30"
+                ],
+                "AKF_CHPK_N4": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "40"
+                ],
+                "AKF_CHPK_N5": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "160"
+                ],
+                "AKF_CHPK_N6": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "240"
+                ],
+                "AKF_CHPK_N7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "360"
+                ],
+                "AKF_CHPK_N8": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "400"
+                ],
+                "AKF_CHPK_T1": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "239"
+                ],
+                "AKF_CHPK_T2": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "119"
+                ],
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "9"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "425"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "400"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "261"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "4014"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "265"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "1"
+                ],
+                "CHPK_HYP_RELIAB": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "10.00",
+                    "1.00",
+                    "0.05"
+                ],
+                "CHPK_MAX_FREQ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "800"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "303"
+                ],
+                "GZI_P2": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "783"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "6"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode7-Chpk_0"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "685"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "7"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "2"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "30"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "30"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "25"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "2.42"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "3.20"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "0.50"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "8": {
-                "8": "",
-                "ID": {
-                    "ID": "0"
-                },
-                "PRM": {
-                    "PRM": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            "MODE8": {
+                "AKF_CHPK_M": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "76"
+                ],
+                "AKF_CHPK_N1_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "36"
+                ],
+                "AKF_CHPK_N2_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "360"
+                ],
+                "AKF_CHPK_N3_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "44"
+                ],
+                "AKF_CHPK_N4_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "396"
+                ],
+                "AKF_CHPK_N5_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "404"
+                ],
+                "AKF_CHPK_N6_7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "440"
+                ],
+                "AKF_CHPK_N7": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "0"
+                ],
+                "AKF_CHPK_N8": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "0"
+                ],
+                "AKF_CHPK_T1": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "396"
+                ],
+                "AKF_CHPK_T2": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "AKF_CHPK_T3": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "AKF_SHIFT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "10"
+                ],
+                "AKF_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "516"
+                ],
+                "AKF_TDELAY": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "440"
+                ],
+                "BD_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "464"
+                ],
+                "BD_TRES": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "10895"
+                ],
+                "BD_WORK": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "472"
+                ],
+                "CHPK": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "1"
+                ],
+                "CHPK_HYP_RELIAB": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "10.00",
+                    "1.00",
+                    "0.05"
+                ],
+                "CHPK_MAX_FREQ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "1500"
+                ],
+                "CODE_ZI": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "DEPTH_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "FREQ_FILTER_SIZE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "100.00",
+                    "1.00",
+                    "5"
+                ],
+                "GAIN_0": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_1": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GAIN_2": [
+                    "RWA",
+                    "FLOAT",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "0.00",
+                    "0.00"
+                ],
+                "GZI_M": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "524287.00",
+                    "1.00",
+                    "76960"
+                ],
+                "GZI_MODE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "1.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_N": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "2047.00",
+                    "1.00",
+                    "0"
+                ],
+                "GZI_P": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "131071.00",
+                    "1.00",
+                    "907"
+                ],
+                "GZI_Z": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "10.00",
+                    "1000.00",
+                    "1.00",
+                    "30"
+                ],
+                "MODE_ID": [
+                    "R",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "7"
+                ],
+                "NAME_MODE": [
+                    "RWA",
+                    "STRING",
+                    "20",
+                    "N/A",
+                    "N/A",
+                    "N/A",
+                    "Mode8-Chpk_1"
+                ],
+                "NUM_SAMPLE": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "908"
+                ],
+                "SIZE_BD": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1500.00",
+                    "1.00",
+                    "19"
+                ],
+                "T_ADJ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "1000.00",
+                    "1.00",
+                    "2"
+                ],
+                "T_DZ": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "114"
+                ],
+                "T_WT": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "114"
+                ],
+                "T_ZI": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "5000.00",
+                    "1.00",
+                    "76"
+                ],
+                "VERSION": [
+                    "R",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "256"
+                ],
+                "WORK": {
+                    "BOT_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "7"
+                    ],
+                    "BOT_MEASURE_PERIOD": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "BW": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "1.00",
+                        "1.00",
+                        "1"
+                    ],
+                    "D_TRES": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "4.04"
+                    ],
+                    "H_MAX": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "4.30"
+                    ],
+                    "H_MIN": [
+                        "RWA",
+                        "FLOAT",
+                        "1",
+                        "0.00",
+                        "500.00",
+                        "0.00",
+                        "1.60"
+                    ],
+                    "V_ITERATION": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
                 }
             },
-            "SENSORS": ""
-        },
-        "SERIAL_NUM": {
-            "SERIAL_NUM": "19190"
-        },
-        "SERVICE_DATE": {
-            "SERVICE_DATE": "0"
-        },
-        "SUBTYPE": {
-            "SUBTYPE": "DVL"
-        },
-        "TYPE": {
-            "TYPE": "HYDRAEP"
-        },
-        "VERSION": {
-            "VERSION": "1"
-        },
-        "VERSION_API": {
-            "VERSION_API": "3129"
-        },
-        "VERSION_BOOT": {
-            "VERSION_BOOT": "3074"
-        },
-        "VERSION_PGL": {
-            "VERSION_PGL": "51380496"
+            "PA": {
+                "QMIN": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "16"
+                ],
+                "TIME_Z_MIN": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "0"
+                ],
+                "T_PULSE_MAX": [
+                    "RWA",
+                    "UINT16",
+                    "1",
+                    "0.00",
+                    "65535.00",
+                    "1.00",
+                    "50"
+                ]
+            },
+            "POWER": {
+                "VPOW_B": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "VPOW_K": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "VPOW_MAX": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ],
+                "VPOW_MIN": [
+                    "RWA",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "4294967296.00",
+                    "1.00",
+                    "0"
+                ]
+            },
+            "PRODACT_DATE": [
+                "RWA",
+                "UINT32",
+                "1",
+                "0.00",
+                "4294967296.00",
+                "1.00",
+                "0"
+            ],
+            "RS": {
+                "SPEED": [
+                    "RW",
+                    "UINT32",
+                    "1",
+                    "0.00",
+                    "230400.00",
+                    "1.00",
+                    "0"
+                ],
+                "SUPPORT": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "0"
+                ],
+                "USE": [
+                    "RWA",
+                    "UINT8",
+                    "1",
+                    "0.00",
+                    "255.00",
+                    "1.00",
+                    "0"
+                ]
+            },
+            "SENSORS": {
+                "1": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "2": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "3": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "4": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "5": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "6": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "7": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                },
+                "8": {
+                    "ID": [
+                        "RWA",
+                        "UINT8",
+                        "1",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ],
+                    "PRM": [
+                        "RWA",
+                        "UINT8",
+                        "31",
+                        "0.00",
+                        "255.00",
+                        "1.00",
+                        "0"
+                    ]
+                }
+            },
+            "SERIAL_NUM": [
+                "RWA",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "0"
+            ],
+            "SERVICE_DATE": [
+                "RWA",
+                "UINT32",
+                "1",
+                "0.00",
+                "4294967296.00",
+                "1.00",
+                "0"
+            ],
+            "SUBTYPE": [
+                "RWA",
+                "STRING",
+                "8",
+                "N/A",
+                "N/A",
+                "N/A",
+                "DVL"
+            ],
+            "TYPE": [
+                "RWA",
+                "STRING",
+                "8",
+                "N/A",
+                "N/A",
+                "N/A",
+                "HYDRAEP"
+            ],
+            "VERSION": [
+                "RWA",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "1"
+            ],
+            "VERSION_API": [
+                "R",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "0"
+            ],
+            "VERSION_BOOT": [
+                "R",
+                "UINT16",
+                "1",
+                "0.00",
+                "65535.00",
+                "1.00",
+                "3074"
+            ],
+            "VERSION_PGL": [
+                "R",
+                "UINT32",
+                "1",
+                "0.00",
+                "4294967296.00",
+                "1.00",
+                "0"
+            ]
         }
     }
 }

@@ -3,6 +3,7 @@
         <file>default_data.json</file>
         <file>dvl_ep.txt</file>
         <file>dvl_ep.json</file>
+        <file>dvl_params_list.txt</file>
         <file>dump_data.json</file>
     </qresource>
 </RCC>

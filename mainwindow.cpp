@@ -14,9 +14,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     jsonModel = new JsonTreeModel(this);
     ui->treeView->setModel(jsonModel);
+    QHeaderView* headerView = ui->treeView->header();
+    QFont font("Arial", 9, 100);
+    font.setBold(true);
+    headerView->setFont(font);
+
+    ui->treeView->header()->setStretchLastSection(false);
+    ui->treeView->setHeaderHidden(false);
 
     initLoadDump();
     initEdit();
+
+    connect(ui->insertColumnAction, SIGNAL(clicked()), this, SLOT(insertColumn()));
+    connect(ui->removeColumnAction, SIGNAL(clicked()), this, SLOT(removeColumn()));
 }
 
 MainWindow::~MainWindow()
@@ -26,38 +36,80 @@ MainWindow::~MainWindow()
 
 void MainWindow::initLoadDump()
 {
-    // выберите путь к txt файлу
+    // выберите путь к txt файлу с данными
     connect(ui->btnLoadTxtPath,&QPushButton::clicked,this,[this](){
-        const QString filepath = QFileDialog::getOpenFileName(this,"File Path");
-        if(filepath.isEmpty()) return;
-        ui->editLoadTxtPath->setText(filepath);
+        const QString jsonpath = QFileDialog::getOpenFileName(
+            this,
+            "Open File",
+            QDir::currentPath(),
+            "text files(*.txt);; All files(*.*)");
+        if (jsonpath.isEmpty()) return;
+        ui->editLoadPath->setText(jsonpath);
     });
-    // импортировать файл txt
-    connect(ui->btnLoadTxt,&QPushButton::clicked,this,[this](){
+
+    // импортировать файл c данными
+    connect(ui->btnLoadTxt, &QPushButton::clicked, this, [this]() {
         const QString loadpath = ui->editLoadTxtPath->text();
-        if(loadpath.isEmpty()) return;
-        jsonModel->loadTxt(loadpath);
-        ui->treeView->expandAll();
+        if (loadpath.isEmpty()) return;
+
+        // Определить путь и нормально ли он открывается
+        if (loadpath.isEmpty()) return;
+        QFile file(loadpath);
+
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+        // Закрыть файл после чтения данных
+        const QByteArray raw_data = file.readAll();
+        file.close();
+
+        jsonModel->loadData(raw_data);
     });
 
     // выберите путь к файлу для импорта
     connect(ui->btnLoadPath,&QPushButton::clicked,this,[this](){
-        const QString jsonpath = QFileDialog::getOpenFileName(this,"File Path");
+        const QString jsonpath = QFileDialog::getOpenFileName(
+            this,
+            "Open File",
+            QDir::currentPath(),
+            "Json files(*.json);; text files(*.txt);; All files (*.*)");
         if(jsonpath.isEmpty()) return;
         ui->editLoadPath->setText(jsonpath);
     });
-    // импортировать файл Json
+
+    // импортировать файл Json или txt
     connect(ui->btnLoadJson,&QPushButton::clicked,this,[this](){
         const QString loadpath = ui->editLoadPath->text();
         if(loadpath.isEmpty()) return;
-        //parseJson.loadJson(loadpath);
-        jsonModel->loadJson(loadpath);
-        ui->treeView->expandAll();
+
+        // Определить путь и нормально ли он открывается
+        if (loadpath.isEmpty()) return;
+        QFile file(loadpath);
+
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) return;
+
+        // Закрыть файл после чтения данных
+        const QByteArray raw_data = file.readAll();
+        file.close();
+
+        QFileInfo file_info(file);
+        QString file_extension = file_info.suffix();
+
+        if (file_extension == "json") {
+            //parseJson.loadJson(loadpath);
+            jsonModel->loadJson(raw_data);
+        }
+        else if (file_extension == "txt") {
+            jsonModel->loadTxt(raw_data);
+        }
+        //ui->treeView->expandAll(); // развернуть все вложения дерева
     });
 
     // выберите путь к экспортируемому файлу
     connect(ui->btnDumpPath,&QPushButton::clicked,this,[this](){
-        const QString jsonpath = QFileDialog::getSaveFileName(this,"Save Path");
+        const QString jsonpath = QFileDialog::getSaveFileName(this,
+        "Save File",
+        QDir::currentPath(),
+        "Json files(*.json);; All files (*.*)");;
         if(jsonpath.isEmpty()) return;
         ui->editDumpPath->setText(jsonpath);
     });
@@ -87,10 +139,10 @@ void MainWindow::initEdit()
             return;
         updateIndex();
         // Изменить содержимое вставки
-        /*for (int column = 0; column < model->columnCount(index.parent()); ++column) {
+        for (int column = 0; column < model->columnCount(index.parent()); ++column) {
             QModelIndex child = model->index(index.row()+1, column, index.parent());
             model->setData(child, QVariant("[No data]"), Qt::EditRole);
-        }*/
+        }
     });
     // Добавить дочерний узел
     connect(ui->btnInsertChild,&QPushButton::clicked,this,[this](){
@@ -105,16 +157,16 @@ void MainWindow::initEdit()
         if (!model->insertRow(0, index))
             return;
         // Изменить содержимое вставки
-        /*for (int column = 0; column < model->columnCount(index); ++column) {
+        for (int column = 0; column < model->columnCount(index); ++column) {
             QModelIndex child = model->index(0, column, index);
             model->setData(child, QVariant("[No data]"), Qt::EditRole);
-        }*/
+        }
         ui->treeView->selectionModel()->setCurrentIndex(model->index(0, 0, index),
                                                         QItemSelectionModel::ClearAndSelect);
         updateIndex();
     });
     // Удалить дерево узлов
-    connect(ui->btnRemove,&QPushButton::clicked,this,[this](){
+    connect(ui->btnRemove, &QPushButton::clicked, this, [this]() {
         QModelIndex index = ui->treeView->selectionModel()->currentIndex();
         QAbstractItemModel *model = ui->treeView->model();
         if (model->removeRow(index.row(), index.parent()))
@@ -124,23 +176,38 @@ void MainWindow::initEdit()
 
 void MainWindow::updateIndex()
 {
-    //Пример копирования
-    //bool hasSelection = !ui->treeView->selectionModel()->selection().isEmpty();
-    //removeRowAction->setEnabled(hasSelection);
-    //removeColumnAction->setEnabled(hasSelection);
-
+    // Обновим состояние кнопок:
+    bool hasSelection = !ui->treeView->selectionModel()->selection().isEmpty();
+    ui->removeColumnAction->setEnabled(hasSelection);
     bool hasCurrent = ui->treeView->selectionModel()->currentIndex().isValid();
-    //insertRowAction->setEnabled(hasCurrent);
-    //insertColumnAction->setEnabled(hasCurrent);
-
+    ui->insertColumnAction->setEnabled(hasCurrent);
+    // Покажем информацию в заголовке окна:
     if (hasCurrent) {
         ui->treeView->closePersistentEditor(ui->treeView->selectionModel()->currentIndex());
-
         int row = ui->treeView->selectionModel()->currentIndex().row();
         int column = ui->treeView->selectionModel()->currentIndex().column();
         if (ui->treeView->selectionModel()->currentIndex().parent().isValid())
-            qDebug()<<tr("Position: (%1,%2)").arg(row).arg(column);
+            qDebug() << tr("Position: (%1,%2)").arg(row).arg(column);
         else
-            qDebug()<<tr("Position: (%1,%2) in top level").arg(row).arg(column);
+            qDebug() << tr("Position: (%1,%2) in top level").arg(row).arg(column);
     }
+}
+
+bool MainWindow::insertColumn() {
+    QAbstractItemModel* model = ui->treeView->model();
+    int column = ui->treeView->selectionModel()->currentIndex().column();
+    bool changed = model->insertColumn(column);
+    if (changed)
+        model->setHeaderData(column, Qt::Horizontal, QVariant("Столбец"), Qt::EditRole);
+    updateIndex();
+    return changed;
+}
+
+bool MainWindow::removeColumn() {
+    QAbstractItemModel* model = ui->treeView->model();
+    int column = ui->treeView->selectionModel()->currentIndex().column();
+    bool changed = model->removeColumn(column); // Удалить столбец для каждого потомка
+    if (changed)
+        updateIndex();
+    return changed;
 }

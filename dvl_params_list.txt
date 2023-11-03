@@ -1,4 +1,4 @@
-ID                              ACCESS,    TYPE,  CNT,     MIN,           MAX,   STEP,      DEFAULT
+ID                            : ACCESS,    TYPE,  CNT,     MIN,           MAX,   STEP,      DEFAULT
 ***************************************************************************************************
 EP/TYPE                       :    RWA,  STRING,    8,     N/A,           N/A,    N/A,      HYDRAEP
 EP/SUBTYPE                    :    RWA,  STRING,    8,     N/A,           N/A,    N/A,          DVL

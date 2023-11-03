@@ -14,18 +14,20 @@ public:
         None,
         Object,
         Array,
-        Value
+        Value,
+        Table
     };
 public:
     explicit JsonTreeItem(JsonTreeItem *parent=nullptr);
-    explicit JsonTreeItem(const QHash<int,QVariant> &datas,JsonTreeItem::JsonItemType type,JsonTreeItem *parent=nullptr);
+    explicit JsonTreeItem(const QHash<int,QVariant>& datas, JsonTreeItem::JsonItemType type, JsonTreeItem *parent=nullptr);
     ~JsonTreeItem();
 
+
     // операции добавления и удаления
-    bool insertChild(int row,JsonTreeItem *child);
+    bool insertChild(int row, JsonTreeItem *child);
     bool removeChild(int row);
-    bool insertChildren(int row,int count);
-    bool removeChildren(int row,int count);
+    bool insertChildren(int row, int count, int columns);
+    bool removeChildren(int row, int count);
     void appendChild(JsonTreeItem *child);
     void deleteAllChild();
 
@@ -36,10 +38,13 @@ public:
     int childCount() const;
     int columnCount() const;
     QVariant data(int column) const;
-    void setData(int column,const QVariant &val);
+    bool setData(int column,const QVariant &val);
     int row() const;
     bool editable(int column) const;
     //QHash<int,QByteArray> roleNames() const;
+
+    bool insertColumns(int pos, int count);
+    bool removeColumns(int pos, int count);
 
     // Удобно для работы с Json
     QString key() const;

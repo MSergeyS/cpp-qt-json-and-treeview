@@ -23,6 +23,10 @@ private:
     void initEdit();
     void updateIndex();
 
+private slots: // слоты для действий, выполняемых по кнопкам
+    bool insertColumn();
+    bool removeColumn();
+
 private:
     Ui::MainWindow *ui;
     //ParseJson parseJson;

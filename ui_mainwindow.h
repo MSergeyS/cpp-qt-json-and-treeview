@@ -46,7 +46,9 @@ public:
     QPushButton *btnInsert;
     QPushButton *btnInsertChild;
     QPushButton *btnRemove;
-    QSpacerItem *horizontalSpacer_2;
+    QPushButton *insertColumnAction;
+    QPushButton *removeColumnAction;
+    QSpacerItem *horizontalSpacer;
     QTreeView *treeView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -137,22 +139,34 @@ public:
 
         actionLayout->addWidget(btnRemove);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        insertColumnAction = new QPushButton(centralwidget);
+        insertColumnAction->setObjectName("insertColumnAction");
 
-        actionLayout->addItem(horizontalSpacer_2);
+        actionLayout->addWidget(insertColumnAction);
+
+        removeColumnAction = new QPushButton(centralwidget);
+        removeColumnAction->setObjectName("removeColumnAction");
+
+        actionLayout->addWidget(removeColumnAction);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        actionLayout->addItem(horizontalSpacer);
 
 
         verticalLayout->addLayout(actionLayout);
 
         treeView = new QTreeView(centralwidget);
         treeView->setObjectName("treeView");
+        treeView->setAnimated(true);
+        treeView->header()->setVisible(false);
 
         verticalLayout->addWidget(treeView);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 630, 23));
+        menubar->setGeometry(QRect(0, 0, 630, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -170,14 +184,16 @@ public:
         editLoadTxtPath->setText(QCoreApplication::translate("MainWindow", "://dvl_ep.txt", nullptr));
         btnLoadTxt->setText(QCoreApplication::translate("MainWindow", "load", nullptr));
         btnLoadPath->setText(QCoreApplication::translate("MainWindow", "loadpath", nullptr));
-        editLoadPath->setText(QCoreApplication::translate("MainWindow", "://default_data.json", nullptr));
+        editLoadPath->setText(QCoreApplication::translate("MainWindow", "://dvl_params_list.txt", nullptr));
         btnLoadJson->setText(QCoreApplication::translate("MainWindow", "load", nullptr));
         btnDumpPath->setText(QCoreApplication::translate("MainWindow", "dumppath", nullptr));
-        editDumpPath->setText(QCoreApplication::translate("MainWindow", "./dump_data.json", nullptr));
+        editDumpPath->setText(QCoreApplication::translate("MainWindow", "://dump_data.json", nullptr));
         btnDumpJson->setText(QCoreApplication::translate("MainWindow", "dump", nullptr));
         btnInsert->setText(QCoreApplication::translate("MainWindow", "Insert", nullptr));
         btnInsertChild->setText(QCoreApplication::translate("MainWindow", "InsertChild", nullptr));
         btnRemove->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
+        insertColumnAction->setText(QCoreApplication::translate("MainWindow", "+ \321\201\321\202\320\276\320\261\320\265\321\206", nullptr));
+        removeColumnAction->setText(QCoreApplication::translate("MainWindow", "- \321\201\321\202\320\276\320\261\320\265\321\206", nullptr));
     } // retranslateUi
 
 };

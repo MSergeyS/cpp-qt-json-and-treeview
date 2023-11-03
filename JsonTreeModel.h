@@ -20,9 +20,11 @@ public:
     ~JsonTreeModel();
 
     // Импорт и экспорт данных
-    bool loadTxt(const QString &filepath);
-    bool loadJson(const QString &filepath);
+    bool loadTxt(const QByteArray& raw_data);
+    bool loadJson(const QByteArray& raw_data);
     bool dumpJson(const QString &filepath);
+
+    bool loadData(const QByteArray& raw_data);
     
     // Отображение данных дерева
     QModelIndex index(int row, int column,
@@ -39,27 +41,48 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value,
                  int role = Qt::EditRole) override;
 
-    bool insertRows(int row, int count,
-                    const QModelIndex &parent = QModelIndex()) override;
-    bool removeRows(int row, int count,
-                    const QModelIndex &parent = QModelIndex()) override;
+    //bool insertRows(int row, int count,
+    //                const QModelIndex &parent = QModelIndex()) override;
+    //bool removeRows(int row, int count,
+    //                const QModelIndex &parent = QModelIndex()) override;
 
-    //QHash<int,QByteArray> roleNames() const override; // Требуется в qml, не используется виджетами
+    bool insertColumns(int position,
+                       int columns,
+                       const QModelIndex &parent = QModelIndex()) override;
+    bool removeColumns(int position,
+                       int columns,
+                       const QModelIndex &parent = QModelIndex()) override;
+
+    // выдаёт заголовок столбца
+    QVariant headerData(int section,
+                        Qt::Orientation orientation,
+                        int role = Qt::DisplayRole) const;
+
+    // установить данные заголовка столбца
+    bool setHeaderData(int section,
+                       Qt::Orientation orientation,
+                       const QVariant& value,
+                       int role = Qt::DisplayRole) override;
+
+    void addHeaders(QStringList headers);
+    void addTreeItemEmpty(QString key, int count_сolumns, JsonTreeItem*);
     
 private:
     JsonTreeItem *getItem(const QModelIndex &index) const;
     // Разбираем json-файл и генерируем дерево
-    void parseObject(const QString &key,const QJsonObject& obj,JsonTreeItem *&item);
-    void parseArray(const QString &key,const QJsonArray& arr,JsonTreeItem *&item);
-    void parseValue(const QString &key,const QJsonValue& val,JsonTreeItem *&item);
-    void parseTxt(const QString& data, JsonTreeItem* &item);
+    void parseObject(const QString &key,const QJsonObject& obj,JsonTreeItem* item);
+    void parseArray(const QString &key,const QJsonArray& arr,JsonTreeItem* item);
+    void parseValue(const QString &key,const QJsonValue& val,JsonTreeItem* item);
+    void parseTxt(const QString& data, JsonTreeItem* item);
+    void parseData(const QString& text, JsonTreeItem* parent);
+
     // Создаем узел JSON
     QVariantMap dumpObject(JsonTreeItem *&item) const;
     QVariantList dumpArray(JsonTreeItem *&item) const;
     QVariant dumpValue(JsonTreeItem *&item) const;
     
 private:
-    JsonTreeItem *theRootItem;
+    JsonTreeItem* theRootItem;
 };
 
 #endif // JSONTREEMODEL_H

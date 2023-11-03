@@ -3,11 +3,12 @@
 JsonTreeItem::JsonTreeItem(JsonTreeItem *parent)
     :theParentItem(parent)
     ,theItemType(JsonTreeItem::None)
-    ,theItemDatas({{0,"[Key]"},{1,"[Value]"}}) // Две строки по умолчанию
+    ,theItemDatas({{0,"Key"},{1,"Value"}}) // Две строки по умолчанию
 {    
+
 }
 
-JsonTreeItem::JsonTreeItem(const QHash<int, QVariant> &datas, JsonTreeItem::JsonItemType type, JsonTreeItem *parent)
+JsonTreeItem::JsonTreeItem(const QHash<int, QVariant>& datas, JsonTreeItem::JsonItemType type, JsonTreeItem *parent)
     :theParentItem(parent)
     ,theItemType(type)
     ,theItemDatas(datas)
@@ -30,18 +31,18 @@ bool JsonTreeItem::insertChild(int row, JsonTreeItem *child)
 
 bool JsonTreeItem::removeChild(int row)
 {
-    if(row<0||row+1>theChildItems.count())
+    if( (row < 0) || ((qsizetype(row)+1) > theChildItems.count()) )
         return false;
     delete theChildItems.takeAt(row);
     return true;
 }
 
-bool JsonTreeItem::insertChildren(int row, int count)
+bool JsonTreeItem::insertChildren(int row, int count, int columns)
 {
-    if(row<0||row>theChildItems.count())
+    if (row < 0 || row > theChildItems.count() )
         return false;
-    for(int i=0;i<count;i++){
-        JsonTreeItem *item=new JsonTreeItem(this);
+    for(int i = 0; i < count; ++i){
+        JsonTreeItem *item = new JsonTreeItem(this);
         // В настоящее время нет делегата для настройки операций, поэтому новые элементы по умолчанию имеют тип значения json.
         item->setType(JsonTreeItem::Value);
         // Порядок новых дополнений здесь не имеет значения row+i
@@ -52,7 +53,7 @@ bool JsonTreeItem::insertChildren(int row, int count)
 
 bool JsonTreeItem::removeChildren(int row, int count)
 {
-    if (row<0||row+count>theChildItems.count())
+    if ( (row < 0) || ((qsizetype(row) + count) > theChildItems.count()) )
         return false;
     for(int i=0;i<count;i++){
         delete theChildItems.takeAt(row+i);
@@ -102,14 +103,17 @@ QVariant JsonTreeItem::data(int column) const
     return theItemDatas.value(column,QVariant());
 }
 
-void JsonTreeItem::setData(int column, const QVariant &val)
+bool JsonTreeItem::setData(int column, const QVariant &value)
 {
-    theItemDatas.insert(column,val);
+    if (column < 0 || column >= theItemDatas.size())
+        return false;
+    theItemDatas.insert(column,value);
+    return true;
 }
 
 int JsonTreeItem::row() const
 {
-    if(theParentItem)
+    if (theParentItem)
         return theParentItem->theChildItems.indexOf(const_cast<JsonTreeItem*>(this));
     return 0;
 }
@@ -124,10 +128,42 @@ bool JsonTreeItem::editable(int column) const
     //Значение массива или объекта редактировать нельзя
     //-->тип()
     //Кроме того, если вы хотите, чтобы ключ был неизменяемым, columns==0 может возвращать false.
-    if((!theParentItem||!theParentItem->parentItem())||
-            ((0==column)&&(theParentItem->type()==JsonTreeItem::Array))||
-            ((1==column)&&((type()==JsonTreeItem::Array)||(type()==JsonTreeItem::Object))))
+    if ( (!theParentItem || !theParentItem->parentItem()) ||
+            ((0==column) && (theParentItem->type()==JsonTreeItem::Array)) ||
+            ((1==column) && ((type()==JsonTreeItem::Array) || (type()==JsonTreeItem::Object))) )
         return false;
+    return true;
+}
+
+bool JsonTreeItem::insertColumns(int position, int columns)
+{
+    if (position < 0 || position > theItemDatas.size())
+        return false;
+    for (int column = 0; column < theItemDatas.size() - position; column++)
+        theItemDatas.insert(theItemDatas.size() - 1 + columns - column,
+                            theItemDatas[theItemDatas.size() - 1 - column]);
+    for (int column = 0; column < columns; column++)
+        theItemDatas.insert(position + column, QVariant(""));
+    foreach(JsonTreeItem* child, theChildItems)
+        child->insertColumns(position, columns);
+    return true;
+}
+
+bool JsonTreeItem::removeColumns(int position, int columns)
+{
+    if ( (position < 0) || ((qsizetype(position) + columns) > theItemDatas.size()) )
+        return false;
+    for (int column = 0; column < columns; ++column) {
+        int inx = position + column;
+        if (inx > theItemDatas.size()) {
+            break;
+        }
+        theItemDatas.remove(inx);
+    }       
+    for (int column = 0; column < theItemDatas.size() - position - columns; column++)
+        theItemDatas.insert(position + column, theItemDatas[position + columns + column]);
+    foreach(JsonTreeItem * child, theChildItems)
+        child->removeColumns(position, columns);
     return true;
 }
 
