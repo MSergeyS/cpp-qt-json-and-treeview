@@ -41,10 +41,10 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value,
                  int role = Qt::EditRole) override;
 
-    //bool insertRows(int row, int count,
-    //                const QModelIndex &parent = QModelIndex()) override;
-    //bool removeRows(int row, int count,
-    //                const QModelIndex &parent = QModelIndex()) override;
+    bool insertRows(int row, int count,
+                    const QModelIndex &parent = QModelIndex()) override;
+    bool removeRows(int row, int count,
+                    const QModelIndex &parent = QModelIndex()) override;
 
     bool insertColumns(int position,
                        int columns,
@@ -56,7 +56,7 @@ public:
     // выдаёт заголовок столбца
     QVariant headerData(int section,
                         Qt::Orientation orientation,
-                        int role = Qt::DisplayRole) const;
+                        int role = Qt::DisplayRole) const override;
 
     // установить данные заголовка столбца
     bool setHeaderData(int section,
@@ -65,8 +65,11 @@ public:
                        int role = Qt::DisplayRole) override;
 
     void addHeaders(QStringList headers);
-    void addTreeItemEmpty(QString key, int count_сolumns, JsonTreeItem*);
-    
+    void addTreeItemEmpty(const QString key, const int count_сolumns, JsonTreeItem *);
+    bool findByKey(const QString key,
+                   QVector<int>& indexes,
+                   JsonTreeItem *item = nullptr) const;
+
 private:
     JsonTreeItem *getItem(const QModelIndex &index) const;
     // Разбираем json-файл и генерируем дерево
@@ -80,7 +83,7 @@ private:
     QVariantMap dumpObject(JsonTreeItem *&item) const;
     QVariantList dumpArray(JsonTreeItem *&item) const;
     QVariant dumpValue(JsonTreeItem *&item) const;
-    
+
 private:
     JsonTreeItem* theRootItem;
 };

@@ -6,6 +6,11 @@
 
 #include <QDebug>
 
+constexpr auto ENDL = "\x0D\x0A";
+
+const QString HEADERS = "[Headers]";
+const QString ROOT = "[Root]";
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -25,8 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     initLoadDump();
     initEdit();
 
-    connect(ui->insertColumnAction, SIGNAL(clicked()), this, SLOT(insertColumn()));
-    connect(ui->removeColumnAction, SIGNAL(clicked()), this, SLOT(removeColumn()));
+    connect(ui->treeView, SIGNAL(jsonModel->dataChanged), this, SLOT(sendMessage()));
 }
 
 MainWindow::~MainWindow()
@@ -63,6 +67,7 @@ void MainWindow::initLoadDump()
         file.close();
 
         jsonModel->loadData(raw_data);
+        expandToKey("MODE1");
     });
 
     // выберите путь к файлу для импорта
@@ -102,6 +107,8 @@ void MainWindow::initLoadDump()
             jsonModel->loadTxt(raw_data);
         }
         //ui->treeView->expandAll(); // развернуть все вложения дерева
+
+        expandToKey("MODE1");
     });
 
     // выберите путь к экспортируемому файлу
@@ -109,10 +116,12 @@ void MainWindow::initLoadDump()
         const QString jsonpath = QFileDialog::getSaveFileName(this,
         "Save File",
         QDir::currentPath(),
-        "Json files(*.json);; All files (*.*)");;
+        "Json files(*.json);; All files (*.*)");
+
         if(jsonpath.isEmpty()) return;
         ui->editDumpPath->setText(jsonpath);
     });
+
     // экспортировать файл Json
     connect(ui->btnDumpJson,&QPushButton::clicked,this,[this](){
         const QString dumppath = ui->editDumpPath->text();
@@ -130,48 +139,76 @@ void MainWindow::initEdit()
     // Изменено на enum:value в добавлении элементов элемента только для целей тестирования
 
     // Добавляем узел
-    connect(ui->btnInsert,&QPushButton::clicked,this,[this](){
-        QModelIndex index = ui->treeView->selectionModel()->currentIndex();
-        if(!index.isValid())
-            return;
-        QAbstractItemModel *model = ui->treeView->model();
-        if(!model->insertRow(index.row()+1,index.parent()))
-            return;
-        updateIndex();
-        // Изменить содержимое вставки
-        for (int column = 0; column < model->columnCount(index.parent()); ++column) {
-            QModelIndex child = model->index(index.row()+1, column, index.parent());
-            model->setData(child, QVariant("[No data]"), Qt::EditRole);
-        }
-    });
-    // Добавить дочерний узел
-    connect(ui->btnInsertChild,&QPushButton::clicked,this,[this](){
-        QModelIndex index = ui->treeView->selectionModel()->currentIndex();
-        QAbstractItemModel *model = ui->treeView->model();
-
-        if (model->columnCount(index) == 0) {
-            if (!model->insertColumn(0, index))
+    connect(ui->btnInsert, &QPushButton::clicked, this, [this]()
+        {
+            QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+            if (!index.isValid())
                 return;
-        }
-
-        if (!model->insertRow(0, index))
-            return;
-        // Изменить содержимое вставки
-        for (int column = 0; column < model->columnCount(index); ++column) {
-            QModelIndex child = model->index(0, column, index);
-            model->setData(child, QVariant("[No data]"), Qt::EditRole);
-        }
-        ui->treeView->selectionModel()->setCurrentIndex(model->index(0, 0, index),
-                                                        QItemSelectionModel::ClearAndSelect);
-        updateIndex();
-    });
-    // Удалить дерево узлов
-    connect(ui->btnRemove, &QPushButton::clicked, this, [this]() {
-        QModelIndex index = ui->treeView->selectionModel()->currentIndex();
-        QAbstractItemModel *model = ui->treeView->model();
-        if (model->removeRow(index.row(), index.parent()))
+            QAbstractItemModel* model = ui->treeView->model();
+            if (!model->insertRow(index.row() + 1, index.parent()))
+                return;
             updateIndex();
-    });
+            // Изменить содержимое вставки
+            for (int column = 0; column < model->columnCount(index.parent()); ++column) {
+                QModelIndex child = model->index(index.row() + 1, column, index.parent());
+                model->setData(child, QVariant("[No data]"), Qt::EditRole);
+            }
+        });
+
+    // Добавить дочерний узел
+    connect(ui->btnInsertChild, &QPushButton::clicked, this, [this]()
+        {
+            QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+            QAbstractItemModel* model = ui->treeView->model();
+
+            if (model->columnCount(index) == 0) {
+                if (!model->insertColumn(0, index))
+                    return;
+            }
+
+            if (!model->insertRow(0, index))
+                return;
+            // Изменить содержимое вставки
+            for (int column = 0; column < model->columnCount(index); ++column) {
+                QModelIndex child = model->index(0, column, index);
+                model->setData(child, QVariant("[No data]"), Qt::EditRole);
+            }
+            ui->treeView->selectionModel()->setCurrentIndex(model->index(0, 0, index),
+                QItemSelectionModel::ClearAndSelect);
+            updateIndex();
+        });
+
+    // Удалить дерево узлов
+    connect(ui->btnRemove, &QPushButton::clicked, this, [this]()
+        {
+            QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+            QAbstractItemModel* model = ui->treeView->model();
+            if (model->removeRow(index.row(), index.parent()))
+                updateIndex();
+        });
+
+    // Добавляем столбец
+    connect(ui->insertColumnAction, &QPushButton::clicked, this, [this]()
+        {
+            QAbstractItemModel* model = ui->treeView->model();
+            int column = ui->treeView->selectionModel()->currentIndex().column();
+            bool changed = model->insertColumn(column);
+            if (changed)
+                model->setHeaderData(column, Qt::Horizontal, QVariant("Столбец"), Qt::EditRole);
+            updateIndex();
+            return changed;
+        });
+
+    // Удалить столбец
+    connect(ui->removeColumnAction, &QPushButton::clicked, this, [this]()
+        {
+            QAbstractItemModel* model = ui->treeView->model();
+            int column = ui->treeView->selectionModel()->currentIndex().column();
+            bool changed = model->removeColumn(column); // Удалить столбец для каждого потомка
+            if (changed)
+                updateIndex();
+            return changed;
+        });
 }
 
 void MainWindow::updateIndex()
@@ -193,21 +230,81 @@ void MainWindow::updateIndex()
     }
 }
 
-bool MainWindow::insertColumn() {
-    QAbstractItemModel* model = ui->treeView->model();
-    int column = ui->treeView->selectionModel()->currentIndex().column();
-    bool changed = model->insertColumn(column);
-    if (changed)
-        model->setHeaderData(column, Qt::Horizontal, QVariant("Столбец"), Qt::EditRole);
-    updateIndex();
-    return changed;
+void MainWindow::expandToKey(QString key)
+{
+    QVector<int> indexes;
+    jsonModel->findByKey(key, indexes);
+
+    QModelIndex index;
+    for (int inx = indexes.size() - 1; inx >= 0; inx--) {
+        index = jsonModel->index(indexes.at(inx), 0, index);
+    }
+    ui->treeView->expand(index);
+    ui->treeView->scrollTo(index);
+    ui->treeView->setCurrentIndex(index);
+    ui->treeView->resizeColumnToContents(0);
 }
 
-bool MainWindow::removeColumn() {
-    QAbstractItemModel* model = ui->treeView->model();
-    int column = ui->treeView->selectionModel()->currentIndex().column();
-    bool changed = model->removeColumn(column); // Удалить столбец для каждого потомка
-    if (changed)
-        updateIndex();
-    return changed;
+void MainWindow::sendMessage()
+{
+    QVector<QModelIndex> indexes;
+    QString message = "PARAMS SET: ";
+
+    QModelIndex index = ui->treeView->currentIndex();
+    indexes << index;
+    while (jsonModel->parent(index) != ui->treeView->rootIndex()) {
+        index = index.parent();
+        indexes << index;
+    }
+    if (indexes.size() < 2)
+        return;
+
+    for (int inx = indexes.size() - 2; inx >= 0; inx--) {
+        message += jsonModel->data(indexes.at(inx)).toString();
+        (inx != 0) ? (message += "/") : (message += ", ");
+    }
+
+    QModelIndex index_parameter = indexes.at(0);
+    int row = index_parameter.row();
+    QModelIndex index_data = jsonModel->index(row, 1, index_parameter.parent());
+    message += jsonModel->data(index_data).toString();
+    message += ENDL;
+
+    qDebug() << message;
+    message += ui->textEdit->toPlainText();
+    ui->textEdit->setText(message);
+
+    //ui->textEdit->setTextColor({255, 255, 0});
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    //qDebug() << "=== press key";
+
+    int keyValue = event->key();
+
+    if (keyValue == Qt::Key_Enter) {
+        qDebug() << "Press Enter";
+    }
+
+    if (keyValue == Qt::Key_Return) {
+        //qDebug() << "Press Return";
+        sendMessage();
+    }
+
+    if (keyValue == Qt::Key_Space) {
+        qDebug() << "Press Space";
+    }
+
+    if (keyValue == Qt::Key_K) {
+        qDebug() << "Press K";
+    }
+
+    if (keyValue == Qt::Key_Control) {
+        // При нажатии клавиши Ctrl получается абсолютная позиция мыши на экране
+        QPoint pt = QCursor::pos();
+        QString str;
+        str = QString("%1 , %2").arg(pt.x()).arg(pt.y());
+        qDebug() << str;
+    }
 }

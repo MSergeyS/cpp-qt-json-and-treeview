@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtGui>
 
 //#include "ParseJson.h"
 #include "JsonTreeModel.h"
@@ -22,14 +23,15 @@ private:
     void initLoadDump();
     void initEdit();
     void updateIndex();
+    void expandToKey(QString key);
 
-private slots: // слоты для действий, выполняемых по кнопкам
-    bool insertColumn();
-    bool removeColumn();
+private slots:
+    void keyPressEvent(QKeyEvent *event); // обработка событий нажатия клавиш на клавиатуре
 
 private:
     Ui::MainWindow *ui;
     //ParseJson parseJson;
     JsonTreeModel *jsonModel;
+    void sendMessage();
 };
 #endif // MAINWINDOW_H

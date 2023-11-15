@@ -19,6 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QTreeView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -50,6 +51,7 @@ public:
     QPushButton *removeColumnAction;
     QSpacerItem *horizontalSpacer;
     QTreeView *treeView;
+    QTextEdit *textEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -57,7 +59,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(630, 467);
+        MainWindow->resize(560, 605);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -163,10 +165,83 @@ public:
 
         verticalLayout->addWidget(treeView);
 
+        textEdit = new QTextEdit(centralwidget);
+        textEdit->setObjectName("textEdit");
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(0, 0, 0, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush1);
+        QBrush brush2(QColor(0, 255, 0, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush2);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush1);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush1);
+        QBrush brush3(QColor(255, 255, 220, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush3);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush1);
+        QBrush brush4(QColor(255, 255, 255, 128));
+        brush4.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush4);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush1);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush4);
+#endif
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush1);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush4);
+#endif
+        textEdit->setPalette(palette);
+        textEdit->setAutoFillBackground(true);
+        textEdit->setReadOnly(true);
+
+        verticalLayout->addWidget(textEdit);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 630, 21));
+        menubar->setGeometry(QRect(0, 0, 560, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -194,6 +269,14 @@ public:
         btnRemove->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
         insertColumnAction->setText(QCoreApplication::translate("MainWindow", "+ \321\201\321\202\320\276\320\261\320\265\321\206", nullptr));
         removeColumnAction->setText(QCoreApplication::translate("MainWindow", "- \321\201\321\202\320\276\320\261\320\265\321\206", nullptr));
+        textEdit->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;\"><br /></p></body></html>", nullptr));
     } // retranslateUi
 
 };

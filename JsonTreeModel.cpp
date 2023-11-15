@@ -25,7 +25,7 @@ bool JsonTreeModel::loadTxt(const QByteArray& raw_data)
     // Создаем заголовки столбцов:
     // пробуем считать из файла
     QString header_string = lines.at(0);
-    QStringList headers = header_string.split(QRegularExpression("[:,]"), Qt::SkipEmptyParts);
+    QStringList headers = lines.at(0).split(QRegularExpression("[:,]"), Qt::SkipEmptyParts);
 
     // Создаем корневой элемент и добавляем заголовки
     addHeaders(headers);
@@ -117,7 +117,7 @@ bool JsonTreeModel::dumpJson(const QString &filepath)
         headers_data.insert(inx+1, headerData(inx, Qt::Horizontal).toString());
     }
 
-    // Создаем элемент заголовка  
+    // Создаем элемент заголовка (ветвь HEADERS)
     JsonTreeItem* headerItem = new JsonTreeItem(headers_data, JsonTreeItem::Array, theRootItem);
     theRootItem->appendChild(headerItem);
 
@@ -138,6 +138,13 @@ bool JsonTreeModel::dumpJson(const QString &filepath)
         break;
     }
 
+    // удаляем ветвь HEADERS (чтобы ветви HEADERS в дереве "не накапливались")
+    for (int inx = 0; inx < top_level_item->childCount(); inx++) {
+        if (top_level_item->childItem(inx)->key() == HEADERS) {
+            top_level_item->removeChild(inx);
+        }
+    }
+    
     // Экспорт json
     QFile file(filepath);
     if(!file.open(QIODevice::WriteOnly|QIODevice::Text))
@@ -157,8 +164,20 @@ bool JsonTreeModel::loadData(const QByteArray& raw_data)
     
     beginResetModel();
 
-    theRootItem->insertColumns(1, 1);
-    setHeaderData(1, Qt::Horizontal, "VALUE");
+    bool already_have_value = false;
+    int inx_value = 1;;
+    for (int inx = 0; inx < theRootItem->columnCount(); inx++) {
+        if (headerData(inx, Qt::Horizontal) == "VALUE") {
+            already_have_value = true;
+            inx_value = inx;
+            break;
+        }
+    }
+
+    if (!already_have_value) {
+        theRootItem->insertColumns(1, 1);
+        setHeaderData(inx_value, Qt::Horizontal, "VALUE");
+    }
 
     // Разобрать объект в документе
     parseData(raw_data, theRootItem->childItem(0));
@@ -169,18 +188,39 @@ bool JsonTreeModel::loadData(const QByteArray& raw_data)
     return true;
 }
 
-
 QModelIndex JsonTreeModel::index(int row, int column, const QModelIndex &parent) const
 {
     if (!hasIndex(row, column, parent))
         return QModelIndex();
 
-    JsonTreeItem *parentItem=getItem(parent);
+    JsonTreeItem *parentItem = getItem(parent);
     JsonTreeItem *childItem = parentItem->childItem(row);
     if (childItem)
         return createIndex(row, column, childItem);
     else
         return QModelIndex();
+}
+
+bool JsonTreeModel::findByKey(const QString key,
+                              QVector<int>& indexes,
+                              JsonTreeItem* item) const
+{
+    if (item == nullptr)
+        item = theRootItem;
+    bool isfind = false;
+    for (int inx = 0; inx < item->childCount(); inx++) {
+        if (item->childItem(inx)->key() == key) {
+            indexes << inx;
+            isfind = true;
+            break;
+        }
+        isfind = findByKey(key, indexes, item->childItem(inx));       
+        if (isfind) {
+            indexes << inx;
+            break;
+        }
+    }
+    return isfind;
 }
 
 QModelIndex JsonTreeModel::parent(const QModelIndex &index) const
@@ -241,27 +281,27 @@ bool JsonTreeModel::setData(const QModelIndex &index, const QVariant &value, int
     return true;
 }
 
-//bool JsonTreeModel::insertRows(int row, int count, const QModelIndex &parent)
-//{
-//    JsonTreeItem *parentItem = getItem(parent);
-//    bool success;
-//    beginInsertRows(parent, row, row + count - 1);
-//    success = parentItem->insertChildren(row, count, theRootItem->columnCount());
-//    endInsertRows();
-//    return success;
-//}
-//
-//bool JsonTreeModel::removeRows(int row, int count, const QModelIndex &parent)
-//{
-//    JsonTreeItem *parentItem=getItem(parent);
-//    bool success = true;
-//    beginRemoveRows(parent, row, row+count-1);
-//    success = parentItem->removeChildren(row,count);
-//    endRemoveRows();
-//    if (theRootItem->columnCount() == 0)
-//        removeRows(0, rowCount());
-//    return success;
-//}
+bool JsonTreeModel::insertRows(int row, int count, const QModelIndex &parent)
+{
+    JsonTreeItem *parentItem = getItem(parent);
+    bool success;
+    beginInsertRows(parent, row, row + count - 1);
+    success = parentItem->insertChildren(row, count, theRootItem->columnCount());
+    endInsertRows();
+    return success;
+}
+
+bool JsonTreeModel::removeRows(int row, int count, const QModelIndex &parent)
+{
+    JsonTreeItem *parentItem = getItem(parent);
+    bool success = true;
+    beginRemoveRows(parent, row, row + count - 1);
+    success = parentItem->removeChildren(row, count);
+    endRemoveRows();
+    if (theRootItem->columnCount() == 0)
+        removeRows(0, rowCount());
+    return success;
+}
 
 bool JsonTreeModel::insertColumns(int position, int columns, const QModelIndex& parent) {
     bool success;
@@ -508,7 +548,7 @@ void JsonTreeModel::parseData(const QString& text, JsonTreeItem* parent)
             if (array_value.size() == 1) {
                 value = array_value.at(0);  // если значение одно, то тип будет QJsonValue
             }
-            qDebug() << key << " : " << value;
+            //qDebug() << key << " : " << value;
 
             parents.last()->setData(1,value);
             
@@ -621,7 +661,7 @@ void JsonTreeModel::addHeaders(QStringList headers)
     theRootItem = new JsonTreeItem(headers_data, JsonTreeItem::Object);
 }
 
-void JsonTreeModel::addTreeItemEmpty(QString key, int count_сolumns, JsonTreeItem* item)
+void JsonTreeModel::addTreeItemEmpty(const QString key, const int count_сolumns, JsonTreeItem *item)
 {
     // Создаем узел
     QHash<int, QVariant> root_data;
