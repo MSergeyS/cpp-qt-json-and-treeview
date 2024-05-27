@@ -1,23 +1,24 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef JSON2TREE_H
+#define JSON2TREE_H
 
-#include <QMainWindow>
-#include <QtGui>
+#include <QDialog>
 
 //#include "ParseJson.h"
 #include "JsonTreeModel.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+class JsonToTree;
+}
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class JsonToTree : public QDialog
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit JsonToTree(QWidget *parent = nullptr);
+    ~JsonToTree();
 
 private:
     void initLoadDump();
@@ -29,9 +30,9 @@ private slots:
     void keyPressEvent(QKeyEvent *event); // обработка событий нажатия клавиш на клавиатуре
 
 private:
-    Ui::MainWindow *ui;
+    Ui::JsonToTree *ui;
     //ParseJson parseJson;
     JsonTreeModel *jsonModel;
     void sendMessage();
 };
-#endif // MAINWINDOW_H
+#endif // JSON2TREE_H

@@ -1,8 +1,9 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "json2tree.h"
+#include "ui_json2tree.h"
 
-#include <QFileDialog>
 #include <QFile>
+#include <QFileDialog>
+#include <QKeyEvent>
 
 #include <QDebug>
 
@@ -11,9 +12,9 @@ constexpr auto ENDL = "\x0D\x0A";
 const QString HEADERS = "[Headers]";
 const QString ROOT = "[Root]";
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+JsonToTree::JsonToTree(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::JsonToTree)
 {
     ui->setupUi(this);
 
@@ -33,12 +34,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->treeView, SIGNAL(jsonModel->dataChanged), this, SLOT(sendMessage()));
 }
 
-MainWindow::~MainWindow()
+JsonToTree::~JsonToTree()
 {
     delete ui;
 }
 
-void MainWindow::initLoadDump()
+void JsonToTree::initLoadDump()
 {
     // выберите путь к txt файлу с данными
     connect(ui->btnLoadTxtPath,&QPushButton::clicked,this,[this](){
@@ -131,7 +132,7 @@ void MainWindow::initLoadDump()
     });
 }
 
-void MainWindow::initEdit()
+void JsonToTree::initEdit()
 {
     // Справочный пример добавления и удаления деталей: редактируемое дерево
 
@@ -211,7 +212,7 @@ void MainWindow::initEdit()
         });
 }
 
-void MainWindow::updateIndex()
+void JsonToTree::updateIndex()
 {
     // Обновим состояние кнопок:
     bool hasSelection = !ui->treeView->selectionModel()->selection().isEmpty();
@@ -230,7 +231,7 @@ void MainWindow::updateIndex()
     }
 }
 
-void MainWindow::expandToKey(QString key)
+void JsonToTree::expandToKey(QString key)
 {
     QVector<int> indexes;
     jsonModel->findByKey(key, indexes);
@@ -245,7 +246,7 @@ void MainWindow::expandToKey(QString key)
     ui->treeView->resizeColumnToContents(0);
 }
 
-void MainWindow::sendMessage()
+void JsonToTree::sendMessage()
 {
     QVector<QModelIndex> indexes;
     QString message = "PARAMS SET: ";
@@ -277,7 +278,7 @@ void MainWindow::sendMessage()
     //ui->textEdit->setTextColor({255, 255, 0});
 }
 
-void MainWindow::keyPressEvent(QKeyEvent *event)
+void JsonToTree::keyPressEvent(QKeyEvent *event)
 {
     //qDebug() << "=== press key";
 

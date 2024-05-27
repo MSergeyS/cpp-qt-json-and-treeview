@@ -17,17 +17,17 @@ SOURCES += \
     JsonTreeItem.cpp \
     JsonTreeModel.cpp \
     ParseJson.cpp \
-    main.cpp \
-    mainwindow.cpp
+    json2tree.cpp \
+    test.cpp
 
 HEADERS += \
     JsonTreeItem.h \
     JsonTreeModel.h \
     ParseJson.h \
-    mainwindow.h
+    json2tree.h
 
 FORMS += \
-    mainwindow.ui
+    json2tree.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
